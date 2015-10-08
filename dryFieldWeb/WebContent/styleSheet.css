@@ -1,0 +1,290 @@
+body{
+	background-image: url("img/field2.jpg");
+	background-repeat: repeat-x;
+	font-family: Arial;
+	
+	background-size: 100%;
+  padding:0px;
+    margin: 0px;
+      color: #121212;
+}
+
+
+
+header{
+  margin: 0px;
+  margin-bottom: 10px;
+  padding:0px;
+  background-color: rgba(0,0,0,0.6);
+  background-image: url("img/dryfield2.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  text-align: right;
+  height: auto;
+  color: white;
+  min-height: 130px;
+}
+
+header>img{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 6%;
+  opacity: 0.6;
+  min-width: 30px;
+  max-width:100px;
+  margin-top: 2%;
+  margin-right: 3%; 
+}
+header>img:hover,{
+  opacity: 1;
+}
+
+
+#bodySection{
+    text-align: center;
+}
+
+#scoreBoard{
+  margin: 2%;
+}
+
+#harvestNb, #waterStock, #money{
+	display: inline-block;
+	width: 30%;
+	font-size: 30px;
+}
+
+#waterStock{
+  background-color: rgba(250,250,250,0.6);
+	border-radius: 15px;
+
+    width: 16%;
+    margin-right: 7%;
+    margin-left : 7%;
+    min-width: 60px;
+    padding: 1% 0% 1% 0%;
+}
+
+
+.field{
+	display: inline-block;
+	width: 32%;
+  margin-top: 0%;
+}
+
+.fields{
+  display: inline-block;
+  margin: 0;
+  padding: : 0;
+}
+
+.fieldButtons, .fieldStock{
+    display: inline-block;
+    vertical-align: bottom;
+        min-width: 90px;
+    padding: 10% 0% 10% 0%;
+    margin-right: 2%;
+} 
+
+.fieldStock{
+	font-style: italic;
+	background-color: rgba(250,250,250,0.6);
+	border-radius: 15px;
+	font-size: 40px;
+    width: 20%;
+    height: 100px;
+margin-bottom: 27px;
+}
+
+.fieldButtons{
+    width: 5%;
+}
+
+
+
+.fieldButtons>img{
+  display: block;
+  width: 60%;
+  min-width: 30px;
+  max-width:100px;
+  margin: 3%;
+}
+
+#waterSection, #buyFieldSection{
+  margin: 0px;
+  padding: 0px;
+}
+#buyWater,#waterPopIn,#buyField,#fieldPopIn {
+  display: inline-block;
+  vertical-align: top;
+  margin-top : 3%;
+  margin-left: 10%;
+}
+#recordsTitle{
+  background-color: rgba(0,0,0,0.6);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin: 0px;
+  padding:1%;
+  width: 500px;
+    text-align: center;
+} 
+#recordsBody{
+  background-color: rgba(250,250,250,0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 0px;
+  padding:1%;
+  width: 500px;
+    text-align: center;
+}
+
+
+ #popInTitle{
+  background-color: rgba(0,0,0,0.6);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin: 0px;
+  padding:1%;
+  width: 300px;
+
+ }
+ #popInClose, #recordsClose{
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+ #textPopInTitle, #textRecordsTitle{
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20%;
+}
+ #popInButton,#popInSelect{
+  display: inline-block;
+    vertical-align: bottom;
+ } 
+#popInSelect, #textRecordsTitle{
+  margin-left:30px;
+
+ } 
+
+ #popInBody{
+  background-color: rgba(250,250,250,0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 0px;
+  padding:1%;
+  width: 300px;
+}
+
+ #popInButton, #recordsButton{
+  width: 10%;
+}
+ #recordsButton{
+  margin-left:200px;
+ } 
+   #popInButton{
+  margin-left:150px;
+ } 
+
+
+
+#waterPopIn, #fieldPopIn{
+  width: 50%;
+ }
+
+
+#waterSection, #buyFieldSection{
+  text-align: left;
+}
+
+#waterSection>img, #buyFieldSection>img{
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+  min-width: 30px;
+  max-width:100px;
+}
+
+select {
+    background: transparent;
+    width: 70px;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #e5d908;
+    height: 34px;
+    -webkit-appearance: none;
+}
+
+.modal-body{
+  height: 500px;
+  background-size: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.modal-gameOver{
+  background-image: url("img/dryfield.jpg");
+}
+
+.modal-circle{
+  background-image: url("img/circle.jpg");
+  color: #e5d908;
+}
+
+.modal-flood{
+  background-image: url("img/inondation.jpg");
+  color: #e5d908;
+}
+
+.modal-earthquake{
+  background-image: url("img/seisme.jpg");
+  color: #e5d908;
+}
+
+.modal-tornado{
+  background-image: url("img/tornade.jpg");
+  color: #e5d908;
+}
+
+
+.modal-contaminatedWater{
+  background-image: url("img/eauContaminee.jpg");
+  color: #e5d908;
+}
+
+#gameOverLogo{
+  width: 60%;
+}
+
+ .modal-body h1{
+  font-size: 80px;
+ }
+
+ .modal-body h2{
+  font-size: 40px;
+ }
+
+label{
+  color: #e5d908;
+}
+input {
+    background: white;
+    opacity: 0.7;
+    border: 2px solid #e5d908;
+    -webkit-appearance: none;
+}
+.saveResultForm{
+  margin: 50px 200px 50px 200px;
+  text-align: left;
+}
+
+#saveResultBtn, #modalCloseBtn{
+  width: 7%;
+}
+
+#modal-close{
+  text-align: right;
+}

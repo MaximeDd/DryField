@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+	<meta charset ="utf-8"/>
+	<title>DryField</title>
+	<link href="styleSheet.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+
+
+</head>
+<body id = "body" ng-app="dryFieldApp" >
+
+	<header id = "headerZone" ng-controller="headerCtrl">
+		<img src="img/start.png" alt="play button" ng-click="playGame()" ng-show="gameBreak">
+		<img src="img/break.png" alt="break button" ng-click="playGame()" ng-hide="gameBreak">
+		<img src="img/cup.png" alt="score view button" ng-click="showScore()">
+		<img src="img/help.png" alt="help button" ng-click="showHelp()">
+	</header>
+	<section ng-view id = 'bodySection'>
+		
+	</section >
+
+</body>
+
+
+<script type="text/javascript" src="./js/angularJS/angular.min.js"></script>
+<script type="text/javascript" src="./js/angularJS/angular-route.min.js"></script>
+<script type="text/javascript" src="./js/angularJS/ui-bootstrap-tpls-0.13.4.min.js"></script>
+<script type="text/javascript" src="./js/FieldModel.js"></script>
+<script type="text/javascript" src="./js/DryFieldApp.js"></script>
+<script type="text/javascript" src="./js/RunBlock.js"></script>
+<script type="text/javascript" src="./js/HeaderController.js"></script>
+<script type="text/javascript" src="./js/FieldController.js"></script>
+<script type="text/javascript" src="./js/WaterController.js"></script>
+<script type="text/javascript" src="./js/BuyFieldController.js"></script>
+<script type="text/javascript" src="./js/GameOverModalController.js"></script>
+<script type="text/javascript" src="./js/ClimateController.js"></script>
+</html>
+
