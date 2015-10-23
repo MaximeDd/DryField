@@ -26,10 +26,13 @@ app.controller('fieldCtrl', function($scope, $rootScope) {
 
         var myTimeout = setTimeout(function(){       
             if (mouseUp>8) {
-                console.log('mouseDown');
                 myInterval = setInterval(function(){
-                    console.log('setInterval');
-                    if($rootScope.waterStock>0){
+                    if($rootScope.waterStock>10 && mouseUp > 20){
+                        $rootScope.irrigateInProgress = true;
+                        myField.quickIrrigation = true;
+                        $rootScope.waterStock -=10;
+                        myField.stock +=10;
+                    }else if($rootScope.waterStock>0){
                         $rootScope.irrigateInProgress = true;
                         myField.quickIrrigation = true;
                         $rootScope.waterStock --;
@@ -45,7 +48,6 @@ app.controller('fieldCtrl', function($scope, $rootScope) {
     
     $rootScope.stopIrrigate = function(fieldNb){
         var myField = $rootScope.fields[fieldNb];
-        console.log('mouseUp');
         mouseUp = 0;
         myField.quickIrrigation = false;
         window.clearInterval(myTimer);
