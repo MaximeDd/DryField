@@ -20,14 +20,19 @@ app.run(function($rootScope, $interval, $modal) {
     				if($rootScope.fields.length===0){
     					$rootScope.gameBreak = true;
     					$rootScope.openGameOverModal();
+    				}else{
+    					for( var i = 0; i < $rootScope.fields.length -1; i++){
+        					if($rootScope.fields[i].stock+$rootScope.fields[i].ripeness/5+$rootScope.money+$rootScope.waterStock>=20){
+        						break;
+        					}else{
+        						$rootScope.gameBreak = true;
+        						$rootScope.openGameOverModal();	
+        						break;
+        					}
+        					
+        				}	
     				}
-    				for( var i = 0; i < $rootScope.fields.length -1; i++){
-    					if($rootScope.fields[i].stock+$rootScope.fields[i].ripeness/5+$rootScope.money+$rootScope.waterStock>=20){
-    						break;
-    					}
-    					$rootScope.gameBreak = true;
-    					$rootScope.openGameOverModal();	
-    				}
+    				
 
     				for( var i = 0; i < $rootScope.fields.length; i++){
     					$rootScope.fields[i].age++;
@@ -42,7 +47,7 @@ app.run(function($rootScope, $interval, $modal) {
 					switch(nRandom){
 						case 1 :
 							$rootScope.gameBreak = true;
-							$rootScope.openClimateModal('html/circleTemplate.html');
+							$rootScope.openClimateModal('dryFieldWeb/html/circleTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
     						}
@@ -50,7 +55,7 @@ app.run(function($rootScope, $interval, $modal) {
     						break;
     					case 2 :
 							$rootScope.gameBreak = true;
-							$rootScope.openClimateModal('html/floodTemplate.html');
+							$rootScope.openClimateModal('dryFieldWeb/html/floodTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
     							$rootScope.fields[i].setStock(5);
@@ -58,17 +63,17 @@ app.run(function($rootScope, $interval, $modal) {
     						break; 
     					case 3 :
 							$rootScope.gameBreak = true;
-							$rootScope.openClimateModal('html/earthquakeTemplate.html');
+							$rootScope.openClimateModal('dryFieldWeb/html/earthquakeTemplate.html');
     						$rootScope.fields.pop();
     						break;
     					case 4 :
 							$rootScope.gameBreak = true;
-							$rootScope.openClimateModal('html/contaminatedWaterTemplate.html');
+							$rootScope.openClimateModal('dryFieldWeb/html/contaminatedWaterTemplate.html');
     						$rootScope.waterStock = 0;
     						break;
     					case 5 :
 							$rootScope.gameBreak = true;
-							$rootScope.openClimateModal('html/tornadoTemplate.html');
+							$rootScope.openClimateModal('dryFieldWeb/html/tornadoTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
     						}
@@ -80,9 +85,10 @@ app.run(function($rootScope, $interval, $modal) {
 
 
     $rootScope.openGameOverModal = function () {
+    	$rootScope.initForNewGame();
     	var modalInstance = $modal.open({
       		animation: false,
-      		templateUrl : 'html/gameOverTemplate.html',
+      		templateUrl : 'dryFieldWeb/html/gameOverTemplate.html',
       		controller: 'gameOverModalCtrl',
       		size: 'lg',
       		resolve: {
@@ -106,7 +112,18 @@ app.run(function($rootScope, $interval, $modal) {
       		}
     	});
   	};
-
+  	
+  	$rootScope.initForNewGame = function(){
+  		$rootScope.money = 50;
+  		$rootScope.harvestNumber = 0;
+  		$rootScope.waterStock = 3;
+  		$rootScope.gameBreak = true;
+  		$rootScope.fields = [];
+  		$rootScope.fields.push(new FieldModel(0));
+  		$rootScope.fields.push(new FieldModel(1));
+  		$rootScope.fields.push(new FieldModel(2));
+  		$rootScope.time = 0;
+  	}
 
 
 
