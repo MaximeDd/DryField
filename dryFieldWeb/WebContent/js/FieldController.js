@@ -43,7 +43,7 @@ app.controller('fieldCtrl', function($scope, $rootScope) {
         },1000);
     };
     
-    $scope.stopIrrigate = function(fieldNb){
+    $rootScope.stopIrrigate = function(fieldNb){
         var myField = $rootScope.fields[fieldNb];
         console.log('mouseUp');
         mouseUp = 0;

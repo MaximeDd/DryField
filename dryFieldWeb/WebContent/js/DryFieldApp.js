@@ -7,7 +7,6 @@ app.config([ '$routeProvider', '$locationProvider',
 			$routeProvider
 			  .when('/dryFieldWeb', {
 				templateUrl : '/dryFieldWeb/html/game.html',
-				//controller : 'gameController'
 			}).when('/dryFieldWeb/score', {
 				templateUrl : '/dryFieldWeb/html/score.html',
 				controller : 'scoreController'

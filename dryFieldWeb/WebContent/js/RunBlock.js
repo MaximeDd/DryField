@@ -46,7 +46,6 @@ app.run(function($rootScope, $interval, $modal) {
     				
 					switch(nRandom){
 						case 1 :
-							$rootScope.gameBreak = true;
 							$rootScope.openClimateModal('dryFieldWeb/html/circleTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
@@ -54,7 +53,6 @@ app.run(function($rootScope, $interval, $modal) {
     						$rootScope.money+=25;
     						break;
     					case 2 :
-							$rootScope.gameBreak = true;
 							$rootScope.openClimateModal('dryFieldWeb/html/floodTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
@@ -62,17 +60,15 @@ app.run(function($rootScope, $interval, $modal) {
     						}
     						break; 
     					case 3 :
-							$rootScope.gameBreak = true;
 							$rootScope.openClimateModal('dryFieldWeb/html/earthquakeTemplate.html');
     						$rootScope.fields.pop();
     						break;
     					case 4 :
-							$rootScope.gameBreak = true;
 							$rootScope.openClimateModal('dryFieldWeb/html/contaminatedWaterTemplate.html');
     						$rootScope.waterStock = 0;
     						break;
     					case 5 :
-							$rootScope.gameBreak = true;
+
 							$rootScope.openClimateModal('dryFieldWeb/html/tornadoTemplate.html');
     						for( var i = 0; i < $rootScope.fields.length; i++){
     							$rootScope.fields[i].setRipeness(0);
@@ -100,6 +96,8 @@ app.run(function($rootScope, $interval, $modal) {
 	};
 
     $rootScope.openClimateModal = function (template) {
+		$rootScope.stopIrrigate();
+		$rootScope.gameBreak = true;
     	var modalInstance = $modal.open({
       		animation: false,
       		templateUrl : template,
