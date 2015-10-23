@@ -226,7 +226,7 @@ select {
 }
 
 .modal-gameOver{
-  background-image: url("img/dryfield.jpg");
+ background-image: url("img/dryField.jpg");
 }
 
 .modal-circle{

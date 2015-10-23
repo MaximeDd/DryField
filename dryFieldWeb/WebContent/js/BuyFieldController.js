@@ -23,10 +23,15 @@ app.controller('buyFieldCtrl', function($scope, $rootScope) {
 
     $scope.buyFieldPopIn = function(){
         var fieldQuantity = parseInt($scope.selectFieldQuantity);
-        if($rootScope.money*25>= fieldQuantity){
-            $rootScope.money -= fieldQuantity*25;
-            $rootScope.fields.push(new FieldModel($rootScope.fields.lenght));
+        for(var i = 0; i<fieldQuantity; i++){
+        	if($rootScope.money>=25){
+                $rootScope.money -= 25;
+                $rootScope.fields.push(new FieldModel($rootScope.fields.lenght));
+            }else{
+            	break;
+            }	
         }
+        
     	$scope.fieldPopInShow = !$scope.fieldPopInShow;
     	$rootScope.gameBreak = false;
     };
