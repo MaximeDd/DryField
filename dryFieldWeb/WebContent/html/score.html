@@ -2,7 +2,7 @@
 	<h1>Scores</h1>
 	<div class = "playerList">
 		
-		<div class = "player" ng-repeat = "score in scoreList">
+		<div class = "player" ng-repeat = "score in scoreList | startFrom:currentPage*pageSize | limitTo:pageSize"">
 			<div class = "playerName" >
 				{{(score.playerName)}} 
 			</div>
@@ -11,4 +11,19 @@
 			</div>
 		</div>
 	</div>
+	
+		<span ng-hide="currentPage == 0" ng-click="currentPage=0" class = "changePageBtn">
+		First</span>
+		<span ng-hide="currentPage == 0" ng-click="currentPage=currentPage-1" class = "changePageBtn">
+		Previous</span>
+		<span ng-show="currentPage == 0" class = "changeInv"></span>
+		<span ng-show="currentPage == 0" class = "changeInv"></span>
+		<span class = "currPage" > {{currentPage+1}}/{{numberOfPages()}} </span>
+		<span ng-show="currentPage >= numberOfPages() - 1" class = "changeInv"></span>
+		<span ng-show="currentPage >= numberOfPages() - 1" class = "changeInv"></span>
+		<span ng-hide="currentPage >= numberOfPages() - 1" ng-click="currentPage=currentPage+1" class = "changePageBtn">
+		Next</span>
+		<span ng-hide="currentPage >= numberOfPages() - 1" ng-click="currentPage = numberOfPages() - 1" class = "changePageBtn">
+		Last</span>
+	
 </div>

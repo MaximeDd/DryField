@@ -303,13 +303,31 @@ input {
 .player{
 	background-color: rgba(250,250,250,0.6);
 	border-radius: 15px;
-	margin-bottom : 5px;
-	margin-left : 20%;
-	width : 60%;
+	margin-bottom : 20px;
+	margin-left : 10%;
+	width : 80%;
 
 }
 .playerScore, .playerName{
 	display : inline-block;
 	margin : 0px;
 	width : 40%;
+}
+
+.changePageBtn{
+	background-color: rgba(250,250,250,0.6);
+	border-radius: 5px;	
+}
+
+.changePageBtn:hover{
+	background-color: rgba(250,250,250,0.9);
+	border-radius: 5px;	
+}
+
+.currPage, .changePageBtn, .changeInv{
+	display : inline-block;
+	font-size: 20px;
+	margin : 5px;
+	padding : 5px;
+	width : 90px;
 }
