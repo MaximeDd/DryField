@@ -1,7 +1,14 @@
-<h1>score</h1>
-<div ng-repeat = "score in scoreList">
-	<div>
-	{{(score.playerName)}} 
-	{{(score.playerScore)}}
+<div id = "scoreTemplate">
+	<h1>Scores</h1>
+	<div class = "playerList">
+		
+		<div class = "player" ng-repeat = "score in scoreList">
+			<div class = "playerName" >
+				{{(score.playerName)}} 
+			</div>
+			<div class = "playerScore" >
+				{{(score.playerScore)}} pts
+			</div>
+		</div>
 	</div>
 </div>

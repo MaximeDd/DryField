@@ -288,3 +288,28 @@ input {
 #modal-close{
   text-align: right;
 }
+#scoreTemplate h1{
+	color : #E5D908;
+	font-size: 50px;
+}
+#scoreTemplate .playerList{
+	text-align : center;
+	font-size: 40px;
+    width: 70%;
+	margin-left : 15%;
+	height : 8O%;
+}
+
+.player{
+	background-color: rgba(250,250,250,0.6);
+	border-radius: 15px;
+	margin-bottom : 5px;
+	margin-left : 20%;
+	width : 60%;
+
+}
+.playerScore, .playerName{
+	display : inline-block;
+	margin : 0px;
+	width : 40%;
+}
