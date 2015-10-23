@@ -35,8 +35,8 @@ header>img{
   margin-top: 2%;
   margin-right: 3%; 
 }
-header>img:hover,{
-  opacity: 1;
+header>img:hover{
+  opacity: 0.9;
 }
 
 

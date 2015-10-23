@@ -2,7 +2,7 @@
 	<h1>Scores</h1>
 	<div class = "playerList">
 		
-		<div class = "player" ng-repeat = "score in scoreList | startFrom:currentPage*pageSize | limitTo:pageSize"">
+		<div class = "player" ng-repeat = "score in scoreList | limitTo:pageSize:currentPage*5">
 			<div class = "playerName" >
 				{{(score.playerName)}} 
 			</div>
