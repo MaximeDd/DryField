@@ -5,21 +5,20 @@ var app = angular.module('dryFieldApp', [ 'ngRoute','ui.bootstrap']);
 app.config([ '$routeProvider', '$locationProvider',
 		function($routeProvider, $locationProvider) {
 			$routeProvider
-				// Game
-			  .when('/game', {
-				templateUrl : '/html/game.html',
-				//controller : 'loginControleur'
-				// Score
-			}).when('/score', {
-				templateUrl : '/html/score.html',
-				//controller : 'listerSallesControleur'
-				// Help
-			}).when('/help', {
-				templateUrl : '/html/help.html',
-				//controller : 'gererSalleControleur'
+			  .when('/dryFieldWeb', {
+				templateUrl : '/dryFieldWeb/html/game.html',
+				//controller : 'gameController'
+			}).when('/dryFieldWeb/score', {
+				templateUrl : '/dryFieldWeb/html/score.html',
+				controller : 'scoreController'
+			}).when('/dryFieldWeb/help', {
+				templateUrl : '/dryFieldWeb/html/help.html',
+				//controller : 'helpController'
 			}).otherwise({
-				redirectTo : '/game'
+				redirectTo : '/dryFieldWeb'
 			});
 
-			$locationProvider.html5Mode(true);
+			$locationProvider.html5Mode({
+     			enabled : true,
+ 				requireBase : false});
 		} ]);

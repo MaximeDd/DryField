@@ -1,54 +1,64 @@
-<section id = 'scoreBoard' >
-			<div id = 'harvestNb'>{{harvestNumber}} Harvests</div>
-			<div id = 'waterStock'>{{waterStock}}L</div>
-			<div id = 'money'>{{money}}$</div>
-		</section>
-		<section id = 'fieldSection' ng-controller="fieldCtrl">
-			<div class = 'fields' ng-repeat="f in fields">
-				<div class = 'field'>
-					<p class="fieldStock"><span>{{Math.floor(f.stock)}}L</span></p>
-				</div>
-				<div class="fieldButtons">
-					<img class="irrigate" src="img/robinet.png" alt="Irrigate button" ng-click="irrigate(f.id)" ng-mousedown="quickIrrigate(f.id)" ng-mouseup ="stopIrrigate(f.id)"ng-hide="f.quickIrrigation">
-					<img class="irrigate" src="img/robinetOk.png" alt="Irrigate button" ng-click="irrigate(f.id)" ng-mousedown="quickIrrigate(f.id)" ng-mouseup ="stopIrrigate(f.id)" ng-show="f.quickIrrigation">
-					<img class="harvest" src="img/rateau.png" alt="Harvest button" ng-hide="f.ripeness>=100">
-					<img class="harvest" src="img/rateauOk.png" alt="Harvest button" ng-show="f.ripeness>=100" ng-click="harvest(f.id)">
-				</div>
+<div class='container' ng-controller='gameController'>
+	<section id='scoreBoard'>
+		<div id='harvestNb'>{{harvestNumber}} Harvests</div>
+		<div id='waterStock'>{{waterStock}}L</div>
+		<div id='money'>{{money}}$</div>
+	</section>
+	<section id='fieldSection' ng-controller="fieldCtrl">
+		<div class='fields' ng-repeat="f in fields">
+			<div class='field'>
+				<p class="fieldStock">
+					<span>{{Math.floor(f.stock)}}L</span>
+				</p>
 			</div>
-		</section>
-		<section id = 'waterSection' ng-controller="waterCtrl">
-			<img id = 'buyWater' src="img/water.png" alt="buy Water button" ng-click="buyWater()">
-			<div id ="waterPopIn" ng-show = "waterPopInShow">
-				<div id = "popInTitle">
-					<img id ="popInClose" src="img/close.png" alt="Pop in close button" ng-click="closeWaterPopIn()">
-					<p id= "textPopInTitle"> Buy Water </p>
-				</div>
-				<div id = "popInBody">
-					<select id ="popInSelect" ng-model="selectWaterQuantity">
-						<option ng-repeat="m in moneyBag">
-							{{m}}
-						</option>
-					</select>
-					<img id ="popInButton" src="img/check.png" alt="Pop in buy water button" ng-click="buyWaterPopIn()">
-				</div>
-				
+			<div class="fieldButtons">
+				<img class="irrigate" src="dryFieldWeb/img/robinet.png" alt="Irrigate button"
+					ng-click="irrigate(f.id)" ng-mousedown="quickIrrigate(f.id)"
+					ng-mouseup="stopIrrigate(f.id)" ng-hide="f.quickIrrigation">
+				<img class="irrigate" src="dryFieldWeb/img/robinetOk.png" alt="Irrigate button"
+					ng-click="irrigate(f.id)" ng-mousedown="quickIrrigate(f.id)"
+					ng-mouseup="stopIrrigate(f.id)" ng-show="f.quickIrrigation">
+				<img class="harvest" src="dryFieldWeb/img/rateau.png" alt="Harvest button"
+					ng-hide="f.ripeness>=100"> <img class="harvest"
+					src="dryFieldWeb/img/rateauOk.png" alt="Harvest button"
+					ng-show="f.ripeness>=100" ng-click="harvest(f.id)">
 			</div>
-		</section>
-		<section id = 'buyFieldSection' ng-controller="buyFieldCtrl">
-			<img id = 'buyField' src="img/achatChamps2.png" alt="buy Field button" ng-click="buyField()">
-			<div id ="fieldPopIn" ng-show = "fieldPopInShow">
-				<div id = "popInTitle">
-					<img id ="popInClose" src="img/close.png" alt="Pop in close button" ng-click="closeFieldPopIn()">
-					<p id= "textPopInTitle"> Buy Field </p>
-				</div>
-				<div id = "popInBody">
-					<select id ="popInSelect" ng-model="selectFieldQuantity">
-						<option ng-repeat="m in moneyBag">
-							{{m}}
-						</option>
-					</select>
-					<img id ="popInButton" src="img/check.png" alt="Pop in buy field button" ng-click="buyFieldPopIn()">
-				</div>
-				
+		</div>
+	</section>
+	<section id='waterSection' ng-controller="waterCtrl">
+		<img id='buyWater' src="dryFieldWeb/img/water.png" alt="buy Water button"
+			ng-click="buyWater()">
+		<div id="waterPopIn" ng-show="waterPopInShow">
+			<div id="popInTitle">
+				<img id="popInClose" src="dryFieldWeb/img/close.png" alt="Pop in close button"
+					ng-click="closeWaterPopIn()">
+				<p id="textPopInTitle">Buy Water</p>
 			</div>
-		</section>
+			<div id="popInBody">
+				<select id="popInSelect" ng-model="selectWaterQuantity">
+					<option ng-repeat="m in moneyBag">{{m}}</option>
+				</select> <img id="popInButton" src="dryFieldWeb/img/check.png"
+					alt="Pop in buy water button" ng-click="buyWaterPopIn()">
+			</div>
+
+		</div>
+	</section>
+	<section id='buyFieldSection' ng-controller="buyFieldCtrl">
+		<img id='buyField' src="dryFieldWeb/img/achatChamps2.png" alt="buy Field button"
+			ng-click="buyField()">
+		<div id="fieldPopIn" ng-show="fieldPopInShow">
+			<div id="popInTitle">
+				<img id="popInClose" src="dryFieldWeb/img/close.png" alt="Pop in close button"
+					ng-click="closeFieldPopIn()">
+				<p id="textPopInTitle">Buy Field</p>
+			</div>
+			<div id="popInBody">
+				<select id="popInSelect" ng-model="selectFieldQuantity">
+					<option ng-repeat="m in moneyBag">{{m}}</option>
+				</select> <img id="popInButton" src="dryFieldWeb/img/check.png"
+					alt="Pop in buy field button" ng-click="buyFieldPopIn()">
+			</div>
+
+		</div>
+	</section>
+</div>

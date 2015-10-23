@@ -2,6 +2,9 @@ package dryFieldWeb;
 
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -36,6 +39,12 @@ public class PlayerWebService {
 		@SuppressWarnings("unchecked")
 		List<Player> players = em.createNamedQuery(
 				"Player.findAll").getResultList();
+		Collections.sort(players, new Comparator<Player>(){
+			@Override
+			public int compare(Player p1, Player p2) {
+				return -p1.getPlayerScore().compareTo(p2.getPlayerScore());
+			}
+		});
 	    return Response.ok(players).build();
 	}
 	
