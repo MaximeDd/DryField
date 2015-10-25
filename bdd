@@ -1,0 +1,23 @@
+﻿CREATE SEQUENCE player_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 2
+  CACHE 1;
+ALTER TABLE player_id_seq
+  OWNER TO postgres;
+
+CREATE TABLE player
+(
+  player_id integer NOT NULL DEFAULT nextval('player_id_seq'::regclass),
+  player_name character varying(50),
+  player_score integer,
+  CONSTRAINT prk_constraint_player PRIMARY KEY (player_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE player
+  OWNER TO postgres;
+
+

@@ -9,9 +9,11 @@ app.controller('headerCtrl', function($scope, $rootScope, $modal, $location) {
     
     };
     $scope.showScore = function(){	
+    	$rootScope.gameBreak = true;
     	$location.path('/dryFieldWeb/score');
     };
     $scope.showHelp = function(){
+    	$rootScope.gameBreak = true;
     	$location.path('/dryFieldWeb/help');
     };
 });
